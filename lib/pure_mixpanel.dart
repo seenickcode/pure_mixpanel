@@ -15,30 +15,35 @@ class Mixpanel {
 
   Mixpanel({@required this.token, this.debug});
 
-  Future<String> track(String eventName,
-      {Map<String, String> properties}) async {
+  Future<http.Response> track(String eventName,
+      {String distinctID, Map<String, String> properties}) async {
+    if (properties == null) {
+      properties = Map<String, String>();
+    }
     properties.putIfAbsent('token', () => this.token);
 
-    var payload =
-        MixpanelPayload.createEncoded(event: eventName, properties: properties);
+    var payload = MixpanelPayload.createEncoded(
+        event: eventName, distinctID: distinctID, properties: properties);
     final uri = MixpanelUri.create(path: '/track', queryParameters: {
       'data': payload,
-      'verbose': (this.debug ? 1 : 0),
+      'verbose': (this.debug ? '1' : '0'),
     });
     if (debug) {
-      print('mixpanel sending: ${uri.toString()}');
+      print(
+          'mixpanel req\n\tproperties: $properties\n\turi: ${uri.toString()}');
     }
-    final resp = await http.get(uri.toString());
-    if (debug) {
-      print('mixpanel response is: $resp.statusCode');
-    }
-    return resp.body;
+    return http.get(uri.toString());
   }
 }
 
 class MixpanelPayload {
   static String createEncoded(
-      {@required String event, Map<String, String> properties}) {
+      {@required String event,
+      String distinctID,
+      Map<String, String> properties}) {
+    if (distinctID != null) {
+      properties.putIfAbsent('distinct_id', () => distinctID);
+    }
     var payload = {
       'event': event,
       'properties': properties,
@@ -59,9 +64,8 @@ class MixpanelUri {
   static Uri create(
       {@required String path, @required Map<String, dynamic> queryParameters}) {
     return Uri(
-      scheme: 'https',
+      scheme: 'http',
       host: MixpanelBaseUri,
-      port: 80,
       path: path,
       queryParameters: queryParameters,
     );
