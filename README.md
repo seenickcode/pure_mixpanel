@@ -12,7 +12,7 @@ flutter test test/pure_mixpanel_test.dart
 
 ## Features
 
-- 7/7/18: event tracking
+* Event tracking
 
 ## TODO
 

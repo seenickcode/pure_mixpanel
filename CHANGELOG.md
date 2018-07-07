@@ -1,3 +1,3 @@
-## [0.0.1] - TODO: Add release date.
+## [1.0.0] - 7/7/18
 
-* TODO: Describe initial release.
+* Initial release, supporting Mixpanel event tracking.
