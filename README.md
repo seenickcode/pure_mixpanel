@@ -14,9 +14,6 @@ flutter test test/pure_mixpanel_test.dart
 
 * Event tracking
 
-## TODO
+## Upcoming Features
 
-Feel free to contribute!
-
-- [ ] storing [User Profiles](https://mixpanel.com/help/reference/http)
-- [ ] testing of invalid requests
+* Storing [User Profiles](https://mixpanel.com/help/reference/http)
