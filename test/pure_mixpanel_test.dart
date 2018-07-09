@@ -24,6 +24,11 @@ void main() {
       },
     ];
 
+    // test a basic event
+    var mixpanel = Mixpanel(token: pureMixpanelPublicAPIToken);
+    var result = await mixpanel.track('foobar');
+    expect(1, json.decode(result.body));
+
     // NOTE for some reason, loop cases above using 'async' doesn't work
     // so doing this manually
     for (var i = 0; i < cases.length; i++) {

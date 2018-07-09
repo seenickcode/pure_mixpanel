@@ -13,7 +13,7 @@ class Mixpanel {
   final String token;
   final bool debug;
 
-  Mixpanel({@required this.token, this.debug});
+  Mixpanel({@required this.token, this.debug: false});
 
   Future<http.Response> track(String eventName,
       {String distinctID, Map<String, String> properties}) async {
