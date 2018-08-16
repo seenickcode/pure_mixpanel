@@ -16,5 +16,5 @@ dev_dependencies:
     sdk: flutter
 
 environment:
-  sdk: ">=1.19.0 <=2.1.0"
-  flutter: ">=0.1.2"
+  sdk: '>=1.19.0 <2.1.0'
+  flutter: '>=0.1.2'
