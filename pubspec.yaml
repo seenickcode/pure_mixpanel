@@ -8,12 +8,12 @@ dependencies:
   flutter:
     sdk: flutter
   meta: ^1.1.5
-  http: ^0.11.3+16
+  http: ^0.12.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
 environment:
-  sdk: '>=1.19.0 <2.1.0'
-  flutter: '>=0.1.2'
+  sdk: ">=1.19.0 <2.1.0"
+  flutter: ">=0.1.2"
