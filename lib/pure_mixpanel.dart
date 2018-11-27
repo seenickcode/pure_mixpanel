@@ -12,8 +12,9 @@ const MixpanelBaseUri = 'api.mixpanel.com';
 class Mixpanel {
   final String token;
   final bool debug;
+  final bool trackIp;
 
-  Mixpanel({@required this.token, this.debug: false});
+  Mixpanel({@required this.token, this.debug: false, this.trackIp: false});
 
   Future<http.Response> track(String eventName,
       {String distinctID, Map<String, String> properties}) async {
@@ -27,6 +28,7 @@ class Mixpanel {
     final uri = MixpanelUri.create(path: '/track', queryParameters: {
       'data': payload,
       'verbose': (this.debug ? '1' : '0'),
+      'ip': (this.trackIp ? '1': '0'),
     });
     if (debug) {
       print(
