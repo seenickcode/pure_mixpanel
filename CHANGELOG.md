@@ -1,3 +1,7 @@
+## [1.0.5] - 12/6/18
+
+* Support for optional IP tracking.
+
 ## [1.0.2] - 7/9/18
 
 * Fix for siutations where debug flag isn't passed in constructor.
