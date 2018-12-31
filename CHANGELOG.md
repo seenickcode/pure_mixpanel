@@ -1,3 +1,7 @@
+## [1.0.6] - 12/30/18
+
+* Upped versions to work with the latest version of Flutter.
+
 ## [1.0.5] - 12/6/18
 
 * Support for optional IP tracking.
