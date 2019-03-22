@@ -1,3 +1,7 @@
+## [1.0.7] - 3/22/19
+
+* Update to work with Dart v1.2.x
+
 ## [1.0.6] - 12/30/18
 
 * Upped versions to work with the latest version of Flutter.
