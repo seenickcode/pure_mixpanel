@@ -1,3 +1,8 @@
+## [1.0.8] - 7/04/19
+* Updated Dart SDK constraints in pubspec
+* Updated all dependencies
+* Updated Flutter version to >= 1.0.0
+
 ## [1.0.7] - 3/22/19
 
 * Update to work with Dart v2.2.1
