@@ -1,4 +1,4 @@
-## [1.0.9] - 7/04/19
+## [1.0.9] - 7/19/19
 * Allowed user to specifiy whether to show debug logs 
 * Disabled sending events (by default) to Mixpanel during debugging. 
 
