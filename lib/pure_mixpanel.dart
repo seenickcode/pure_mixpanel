@@ -28,11 +28,12 @@ class Mixpanel {
     final uri = MixpanelUri.create(path: '/track', queryParameters: {
       'data': payload,
       'verbose': (this.debug ? '1' : '0'),
-      'ip': (this.trackIp ? '1': '0'),
+      'ip': (this.trackIp ? '1' : '0'),
     });
     if (debug) {
       print(
-          'mixpanel req\n\tproperties: $properties\n\turi: ${uri.toString()}');
+          'IN DEBUG NOT SENDING TO MIXPANEL: \n req\n\tproperties: $properties\n\turi: ${uri.toString()}');
+      return null;
     }
     return http.get(uri.toString());
   }
