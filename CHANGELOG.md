@@ -1,3 +1,7 @@
+## [1.0.9] - 7/04/19
+* Allowed user to specifiy whether to show debug logs 
+* Disabled sending events (by default) to Mixpanel during debugging. 
+
 ## [1.0.8] - 7/04/19
 * Updated Dart SDK constraints in pubspec
 * Updated all dependencies
