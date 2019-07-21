@@ -13,8 +13,14 @@ class Mixpanel {
   final String token;
   final bool debug;
   final bool trackIp;
+  final bool showDebugLog;
 
-  Mixpanel({@required this.token, this.debug: false, this.trackIp: false});
+  Mixpanel({
+    @required this.token,
+    this.debug: false,
+    this.trackIp: false,
+    this.showDebugLog = true,
+  });
 
   Future<http.Response> track(String eventName,
       {String distinctID, Map<String, String> properties}) async {
@@ -28,11 +34,13 @@ class Mixpanel {
     final uri = MixpanelUri.create(path: '/track', queryParameters: {
       'data': payload,
       'verbose': (this.debug ? '1' : '0'),
-      'ip': (this.trackIp ? '1': '0'),
+      'ip': (this.trackIp ? '1' : '0'),
     });
     if (debug) {
-      print(
-          'mixpanel req\n\tproperties: $properties\n\turi: ${uri.toString()}');
+      if (showDebugLog)
+        print(
+            'IN DEBUG NOT SENDING TO MIXPANEL: \n req\n\tproperties: $properties\n\turi: ${uri.toString()}');
+      return null;
     }
     return http.get(uri.toString());
   }
