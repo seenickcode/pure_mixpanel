@@ -10,7 +10,7 @@ void main() {
         'event': 'foobar',
         'distinct_id': '492',
         'token': pureMixpanelPublicAPIToken,
-        'debug': true,
+        'debug': false,
         'expects_status_code': 200,
         'expects_status': 1,
       },

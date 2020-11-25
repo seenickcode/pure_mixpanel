@@ -1,13 +1,12 @@
 name: pure_mixpanel
 description: A new pure Dart library for Mixpanel analytics.
-version: 1.0.9
+version: 1.0.10
 author: Nicholas Manning <puremixpanel@gmail.com>
 homepage: https://github.com/seenickcode/pure_mixpanel
 
 dependencies:
   flutter:
     sdk: flutter
-  meta: 1.1.7
   http: 0.12.0+2
   test: any
 
