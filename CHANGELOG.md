@@ -1,3 +1,6 @@
+## [1.0.10] - 11/25/20
+* Removed need for 'meta' package. Updated test to not use debug true when calling mixpanel.
+
 ## [1.0.9] - 7/19/19
 * Allowed user to specifiy whether to show debug logs 
 * Disabled sending events (by default) to Mixpanel during debugging. 

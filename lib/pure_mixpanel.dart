@@ -4,7 +4,6 @@ import 'dart:core';
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:meta/meta.dart';
 
 const MixpanelBaseUri = 'api.mixpanel.com';
 
@@ -16,7 +15,7 @@ class Mixpanel {
   final bool showDebugLog;
 
   Mixpanel({
-    @required this.token,
+    this.token,
     this.debug: false,
     this.trackIp: false,
     this.showDebugLog = true,
@@ -48,9 +47,7 @@ class Mixpanel {
 
 class MixpanelPayload {
   static String createEncoded(
-      {@required String event,
-      String distinctID,
-      Map<String, String> properties}) {
+      {String event, String distinctID, Map<String, String> properties}) {
     if (distinctID != null) {
       properties.putIfAbsent('distinct_id', () => distinctID);
     }
@@ -71,8 +68,7 @@ class MixpanelPayload {
 }
 
 class MixpanelUri {
-  static Uri create(
-      {@required String path, @required Map<String, dynamic> queryParameters}) {
+  static Uri create({String path, Map<String, dynamic> queryParameters}) {
     return Uri(
       scheme: 'http',
       host: MixpanelBaseUri,
