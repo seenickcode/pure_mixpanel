@@ -1,4 +1,4 @@
-library pure_mixpanel;
+library flutter_pure_mixpanel;
 
 import 'dart:core';
 import 'dart:async';

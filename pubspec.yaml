@@ -1,4 +1,4 @@
-name: pure_mixpanel
+name: flutter_pure_mixpanel
 description: A new pure Dart library for Mixpanel analytics.
 version: 1.0.10
 homepage: https://github.com/seenickcode/pure_mixpanel

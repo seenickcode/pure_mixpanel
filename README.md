@@ -1,4 +1,4 @@
-# pure_mixpanel
+# flutter_pure_mixpanel
 
 A pure Dart library for [Mixpanel analytics](https://www.mixpanel.com). 
 
