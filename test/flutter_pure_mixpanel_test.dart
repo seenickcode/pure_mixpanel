@@ -1,6 +1,6 @@
 import 'package:test/test.dart';
 import 'dart:convert';
-import 'package:flutter_pure_mixpanel/pure_mixpanel.dart';
+import 'package:flutter_pure_mixpanel/flutter_pure_mixpanel.dart';
 
 void main() {
   test('Mixpanel track events', () async {
